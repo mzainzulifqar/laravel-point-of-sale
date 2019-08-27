@@ -1,7 +1,7 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg">Best Price</p>
 
 
-## About Best Price
+## About Point of Sale
 
 Point of sale is a web application Develope with one of the finest Framework Laravel. Its for those who want  fast reliable item selling shop for their business and shops with beautiful design frontend and backend to manage everything with ease at finger tips, such as:
 
