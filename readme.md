@@ -24,10 +24,9 @@ This Project is the v.1 with all the major functionalities Implemented .
  To Start this release please perform following Steps;
 
 1) Make Database with name "pos"
-2) Then run "php artisan migrate" in terminal.
-3) Then u have to manually seed data to database just run "php artisan db:seed".
-4) Hit Url "http://localhost/pos/"
-6) Boom You are done!! Enjoy
+2) Then run "php artisan migrate --seed" in terminal.
+3) Hit Url "http://localhost/pos/"
+4) Boom You are done!! Enjoy
 
 ## PHP version 7.0 or newer is recommended.
 
