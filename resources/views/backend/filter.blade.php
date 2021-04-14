@@ -133,7 +133,7 @@ footer {
 #loading
 {
  text-align:center; 
- background: url({{asset('public/images/loader.gif')}}) no-repeat center; 
+ background: url({{asset('images/loader.gif')}}) no-repeat center; 
  height: 150px;
 }
 </style>

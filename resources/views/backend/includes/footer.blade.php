@@ -129,30 +129,30 @@
         <div class="rightbar-overlay"></div>
 
         <!-- Vendor js -->
-        <script src="{{asset('public/theme/assets/js/vendor.min.js')}}"></script>
+        <script src="{{asset('theme/assets/js/vendor.min.js')}}"></script>
             
-        <script src="{{asset('public/theme/assets/dist/js/bootstrap-datepicker.min.js')}}"></script>
-        <script src="{{asset('public/theme/assets/select2/dist/js/select2.min.js')}}"></script>
+        <script src="{{asset('theme/assets/dist/js/bootstrap-datepicker.min.js')}}"></script>
+        <script src="{{asset('theme/assets/select2/dist/js/select2.min.js')}}"></script>
 
 
 
         <!-- knob plugin -->
-        <script src="{{asset('public/theme/assets/libs/jquery-knob/jquery.knob.min.js')}}"></script>
+        <script src="{{asset('theme/assets/libs/jquery-knob/jquery.knob.min.js')}}"></script>
 
         <!--Morris Chart-->
-        <script src="{{asset('public/theme/assets/libs/morris-js/morris.min.js')}}"></script>
-        <script src="{{asset('public/theme/assets/libs/raphael/raphael.min.js')}}"></script>
+        <script src="{{asset('theme/assets/libs/morris-js/morris.min.js')}}"></script>
+        <script src="{{asset('theme/assets/libs/raphael/raphael.min.js')}}"></script>
 
         <!-- Dashboard init js-->
-        <script src="{{asset('public/theme/assets/js/pages/dashboard.init.js')}}"></script>
+        <script src="{{asset('theme/assets/js/pages/dashboard.init.js')}}"></script>
 
 
         <!-- Init js-->
-        {{-- <script src="{{asset('public/theme/assets/js/pages/form-advanced.init.js')}}"></script> --}}
+        {{-- <script src="{{asset('theme/assets/js/pages/form-advanced.init.js')}}"></script> --}}
 
 
         <!-- App js -->
-        <script src="{{asset('public/theme/assets/js/app.min.js')}}"></script>
+        <script src="{{asset('theme/assets/js/app.min.js')}}"></script>
 
         @yield('scripts')
         <script>

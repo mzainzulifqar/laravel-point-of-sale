@@ -47,7 +47,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="inputEmail4" class="col-form-label">Name</label>
-                                                <input type="text" class="form-control"  name="name" placeholder="Name" id="name">
+                                                <input type="text" class="form-control"  name="name" placeholder="Name" id="name" required>
                                                  @error('name')
                                             <span>
                                                 <strong class="text-danger">{{$message}}</strong>
@@ -56,7 +56,7 @@
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <label for="inputPassword4" class="col-form-label">Phone Number</label>
-                                                <input type="number" name="number" class="form-control" id="number" placeholder="Number" >
+                                                <input type="number" name="number" class="form-control" id="number" placeholder="Number" required>
                                                 <span class="help-block"><small>Please enter number first.</small></span>
                                             </div>
                                         </div>

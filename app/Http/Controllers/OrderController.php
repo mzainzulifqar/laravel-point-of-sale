@@ -2,28 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
 use App\Order;
-use App\OrderProduct;
 use App\Product;
+use App\Customer;
 use Carbon\Carbon;
+use App\OrderProduct;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-
-
-      public function __construct(){
-
-        $this->middleware('permission:view-order',['only' => ['index']]);
-        $this->middleware('permission:create-order',['only' => ['create','store']]);
-        $this->middleware('permission:update-order',['only' => ['edit','update']]);
-        $this->middleware('permission:delete-order',['only' => ['destroy']]);
-
+    public function __construct()
+    {
+        $this->middleware('permission:view-order', ['only' => ['index']]);
+        $this->middleware('permission:create-order', ['only' => ['create', 'store']]);
+        $this->middleware('permission:update-order', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete-order', ['only' => ['destroy']]);
     }
-     
+
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +29,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::paginate(10);
-        return view('backend.order.index',compact('orders'));
+        return view('backend.order.index', compact('orders'));
     }
 
     /**
@@ -53,55 +50,42 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $customer = Customer::where('number','=',$request->number)->first();
-    
-        if(empty($customer))
-        {
-            $customer = Customer::create(['name' => $request->name,'number' => $request->number]);
+        $customer = Customer::where('number', '=', $request->number)->first();
+
+        if (empty($customer)) {
+            $customer = Customer::create(['name' => $request->name, 'number' => $request->number]);
         }
 
         $order = Order::create([
-            'customer_id' => $customer->id,
-            'total_amount' => $request->net_total,
-            'order_status' => 'active',
+            'customer_id'    => $customer->id,
+            'total_amount'   => $request->net_total,
+            'order_status'   => 'active',
             'payment_method' => 'cash',
-            'discount' => (isset($request->dis)) ? $request->dis : '0',
-            'cashier_name' => Auth::user()->name,
-            'created_at' => Carbon::today(),
-
+            'discount'       => (isset($request->dis)) ? $request->dis : '0',
+            'cashier_name'   => Auth::user()->name,
+            'created_at'     => Carbon::today(),
         ]);
 
-        if($order)
-        {
-             $products = ['products' => $request->products,'quantity' => $request->quantity];
-        
-         for ($i=0; $i < (count($products['products'])); $i++) { 
-            OrderProduct::create([
-                'order_id' => $order->id,
-                'product_id' => $products['products'][$i],
-                'quantity' => $products['quantity'][$i],
+        if ($order) {
+            $products = ['products' => $request->products, 'quantity' => $request->quantity];
 
-            ]);
+            for ($i = 0; $i < (count($products['products'])); $i++) {
+                OrderProduct::create([
+                    'order_id'   => $order->id,
+                    'product_id' => $products['products'][$i],
+                    'quantity'   => $products['quantity'][$i],
+                ]);
 
-
-            for ($i=0; $i <count($products['products']) ; $i++) { 
-                $product = Product::find($products['products'][$i]);
-                $product->update(
-                    ['quantity' =>  $product->quantity - $products['quantity'][$i] ]);
-
+                for ($i = 0; $i < count($products['products']) ; $i++) {
+                    $product = Product::find($products['products'][$i]);
+                    $product->update(
+                        ['quantity' =>  $product->quantity - $products['quantity'][$i]]
+                    );
+                }
             }
-
-         }
         }
-       
-        
-        return back()->with('success','Order # "'.$order->id.'" Placed Successfully');
 
-
-        // die();
-
-
+        return back()->with('success', 'Order #'.$order->id.' Placed Successfully');
     }
 
     /**
@@ -112,8 +96,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-
-        return view('backend.order.order_details',compact('order'));
+        return view('backend.order.order_details', compact('order'));
     }
 
     /**
@@ -124,7 +107,6 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        
     }
 
     /**
@@ -147,48 +129,37 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        if($order->delete())
-        {
-            return back()->with('success','Order deleted successfully');
-        }
-        else
-        {
-            return back()->with('success','Whoops Something went wrong');
+        if ($order->delete()) {
+            return back()->with('success', 'Order deleted successfully');
+        } else {
+            return back()->with('success', 'Whoops Something went wrong');
         }
     }
 
-
-    public static function fetch_products(){
-        $products = Product::where('quantity','>',0)->get();
+    public static function fetch_products()
+    {
+        $products = Product::where('quantity', '>', 0)->get();
         $output = '';
         foreach ($products as $product) {
-            $output .= '<option value="'.$product->id.'">'.$product->name.'</option>';
-           
+            $output .= '<option value="' . $product->id . '">' . $product->name . '</option>';
         }
-         return $output;
+        return $output;
         // return response()->json($products);
     }
 
     public function fetch_single_product(Request $request)
-
-    {      $product = DB::select('select price,quantity from products where status = 1 AND id = "'.$request->id.'"', [1]);
+    {
+        $product = DB::select('select price,quantity from products where status = 1 AND id = "' . $request->id . '"', [1]);
         return response()->json($product);
     }
 
-
     public function fetch_customer(Request $request)
     {
-        
-         $customer = Customer::where('number','=',$request->number)->first();
-         if(!empty($customer))
-         {
-            return response()->json($customer);    
-         }
-         else 
-         {
+        $customer = Customer::where('number', '=', $request->number)->first();
+        if (!empty($customer)) {
+            return response()->json($customer);
+        } else {
             return response()->json('Try Again');
-         }
-        
-
+        }
     }
 }

@@ -10,15 +10,15 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('public/theme/assets/images/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('theme/assets/images/favicon.ico')}}">
 
         <!--Morris Chart-->
-        <link rel="stylesheet" href="{{asset('public/theme/assets/libs/morris-js/morris.css')}}" />
+        <link rel="stylesheet" href="{{asset('theme/assets/libs/morris-js/morris.css')}}" />
 
         <!-- App css -->
-        <link href="{{asset('public/theme/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/theme/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/theme/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -36,7 +36,7 @@
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="text-center">
                             <a href="index.html">
-                                <span><img src="{{asset('public/theme/assets/images/logo-dark.png')}}" alt="" height="22"></span>
+                                <span><img src="{{asset('theme/assets/images/logo-dark.png')}}" alt="" height="22"></span>
                             </a>
                             <p class="text-muted mt-2 mb-4">Responsive Admin Dashboard</p>
                         </div>
@@ -112,10 +112,10 @@
     
 
         <!-- Vendor js -->
-        <script src="{{asset('public/theme/assets/js/vendor.min.js')}}"></script>
+        <script src="{{asset('theme/assets/js/vendor.min.js')}}"></script>
 
         <!-- App js -->
-        <script src="{{asset('public/theme/assets/js/app.min.js')}}"></script>
+        <script src="{{asset('theme/assets/js/app.min.js')}}"></script>
         
     </body>
 

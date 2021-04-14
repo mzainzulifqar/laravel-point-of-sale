@@ -33,3 +33,5 @@ This Project is the v.1 with all the major functionalities Implemented .
 It should work on 7.0 as well, but we strongly advise you NOT to run
 such old versions of PHP, because of potential security and performance
 issues, as well as missing features.
+
+## PR's are welcome

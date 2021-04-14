@@ -10,23 +10,23 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('public/theme/assets/images/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('theme/assets/images/favicon.ico')}}">
 
         <!--Morris Chart-->
-        <link rel="stylesheet" href="{{asset('public/theme/assets/libs/morris-js/morris.css')}}" />
+        <link rel="stylesheet" href="{{asset('theme/assets/libs/morris-js/morris.css')}}" />
 
-        <link href="{{asset('public/theme/assets/dist/css/bootstrap-datepicker.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/dist/css/bootstrap-datepicker.css')}}" rel="stylesheet" type="text/css" />
 
-        <link href="{{asset('public/theme/assets/select2/dist/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/select2/dist/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
 
          
 
         <!-- App css -->
-        <link href="{{asset('public/theme/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/theme/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/theme/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
 
-        <link href="{{asset('public/theme/assets/css/custom.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('theme/assets/css/custom.css')}}" rel="stylesheet" type="text/css" />
 
 
 

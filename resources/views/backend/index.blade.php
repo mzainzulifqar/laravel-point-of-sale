@@ -261,7 +261,7 @@
                                 <div class="card-box widget-user">
                                     <div>
                                         <div class="avatar-lg float-left mr-3">
-                                            <img src="{{asset('public/images/dummy.png')}}" class="img-fluid rounded-circle" alt="user">
+                                            <img src="{{asset('images/dummy.png')}}" class="img-fluid rounded-circle" alt="user">
                                         </div>
                                         <div class="wid-u-info">
                                             <h5 class="mt-0">Admin</h5>
@@ -279,7 +279,7 @@
                                 <div class="card-box widget-user">
                                     <div>
                                         <div class="avatar-lg float-left mr-3">
-                                            <img src="{{asset('public/images/'.$members->thumbnail)}}" class="img-fluid rounded-circle" alt="user">
+                                            <img src="{{asset('images/'.$members->thumbnail)}}" class="img-fluid rounded-circle" alt="user">
                                         </div>
                                         <div class="wid-u-info">
                                             <h5 class="mt-0">{{$members->name}}</h5>

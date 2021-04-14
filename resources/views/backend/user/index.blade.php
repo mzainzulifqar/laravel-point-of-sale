@@ -49,7 +49,7 @@
                                                         <th>{{$user->id}}</th>
                                                         <td>{{uppercase($user->name)}}</td>
                                                         <td><img  style="width:60px;height:60px;" 
-                                                        src="{{asset('public/images/'.Auth::user()->thumbnail)}}" alt=""></td>
+                                                        src="{{asset('images/'.Auth::user()->thumbnail)}}" alt=""></td>
                                                         <td><a href="{{url('user/'.$user->id.'/edit')}}" class="btn btn-bordred-primary waves-effect  width-md waves-light">Edit</a></td>
                                                         <td><p  onclick="event.preventDefault();document.getElementById('del-form-{{$user->id}}').submit()" class="btn btn-bordred-danger waves-effect  width-md waves-light">Delete</p></td>
 
