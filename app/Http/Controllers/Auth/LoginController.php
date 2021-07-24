@@ -20,14 +20,12 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
     protected $redirectTo = '/home';
-
 
     /**
      * Show the application's login form.
@@ -38,7 +36,6 @@ class LoginController extends Controller
     {
         return view('backend.login');
     }
-    
 
     /**
      * Create a new controller instance.
@@ -55,10 +52,9 @@ class LoginController extends Controller
      *
      * @return string
      */
-    public function getfieldname()
-    {
-       
-        $field = filter_var($login,FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
-        return $filed;
-    }
+    // public function getfieldname()
+    // {
+    //     $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+    //     return $filed;
+    // }
 }

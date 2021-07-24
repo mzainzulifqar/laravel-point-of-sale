@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Permission;
+use Illuminate\Support\Facades\DB;
+
 class PermissionSeeder extends Seeder
 {
     /**
@@ -11,23 +12,16 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
+        $permissions = [
+            ['name' => 'create-user'],
+            ['name' => 'delete-user'],
+            ['name' => 'update-user'],
+            ['name' => 'view-user'],
 
-    	$permissions = [
+            ['name' => 'view-orders'],
 
-    		['name' => 'create-user'],
-    		['name' => 'delete-user'],
-    		['name' => 'update-user'],
-    		['name' => 'view-user' ],
-            
-    		['name' => 'view-orders'],
+            ['name' => 'create-post'],
 
-    	
-    		
-    	
-
-    		['name' => 'create-post'],
-
-    
             ['name' => 'view-role'],
             ['name' => 'create-role'],
             ['name' => 'update-role'],
@@ -43,7 +37,7 @@ class PermissionSeeder extends Seeder
             ['name' => 'create-category'],
             ['name' => 'update-category'],
             ['name' => 'delete-category'],
-            
+
             ['name' => 'view-brand'],
             ['name' => 'create-brand'],
             ['name' => 'update-brand'],
@@ -53,7 +47,6 @@ class PermissionSeeder extends Seeder
             ['name' => 'create-product'],
             ['name' => 'update-product'],
             ['name' => 'delete-product'],
-            
 
             ['name' => 'view-customer'],
             ['name' => 'create-customer'],
@@ -65,13 +58,8 @@ class PermissionSeeder extends Seeder
             ['name' => 'create-order'],
             ['name' => 'update-order'],
             ['name' => 'delete-order'],
-            
-    		
+        ];
 
-
-    	];
-
-    	DB::table('permissions')->insert($permissions);
-       
+        DB::table('permissions')->insert($permissions);
     }
 }

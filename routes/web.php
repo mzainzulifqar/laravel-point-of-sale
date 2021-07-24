@@ -1,9 +1,7 @@
 <?php
 
-// use Illuminate\Auth\Middleware\Auth;
-use App\Customer;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/testing',function(){
-	$cust = Customer::where('number','=','03326764195')->first();
-	dd($cust);
-});
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -39,10 +32,6 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('fetch_single_product','OrderController@fetch_single_product');
 	Route::post('fetch_customer','OrderController@fetch_customer');
 	
-	
-	
-	// 
-
 	// custom permission route
 	Route::get('permission/filter','PermissionController@filter')->name('permission.filter');
 	// Route::get('orders/filter','CustomerController@filter')->name('orders.filter');
@@ -74,9 +63,8 @@ Route::group(['middleware' => 'auth'],function(){
 // product filter route end here
 
 
-	// sql testing route
-		Route::get('/sql','ProductfilterController@sql');
-
-	// sql route end here
+// sql testing route
+	Route::get('/sql','ProductfilterController@sql');
+// sql route end here
 
 
