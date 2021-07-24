@@ -76,10 +76,10 @@ class OrderController extends Controller
                     'quantity'   => $products['quantity'][$i],
                 ]);
 
-                for ($i = 0; $i < count($products['products']) ; $i++) {
-                    $product = Product::find($products['products'][$i]);
+                for ($j = 0; $j < count($products['products']) ; $j++) {
+                    $product = Product::find($products['products'][$j]);
                     $product->update(
-                        ['quantity' =>  $product->quantity - $products['quantity'][$i]]
+                        ['quantity' =>  $product->quantity - $products['quantity'][$j]]
                     );
                 }
             }

@@ -15,8 +15,8 @@
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
+        "fakerphp/faker": "^1.15",
         "filp/whoops": "^2.0",
-        "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^7.5"
